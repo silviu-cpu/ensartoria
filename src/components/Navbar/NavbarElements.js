@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { Link as LinkR } from 'react-router-dom'
 import { Link as LinkS } from 'react-scroll'
-
+import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md'
 
 export const Nav = styled.nav`
-    background: #000;
+    background: transparent;
     height: 80px;
+    margin-top: -80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +42,7 @@ export const NavLogo = styled(LinkR)`
     font-weight: bold;
     text-decoration: none;
     top:50%;
+    font-family: 'Rock Salt', cursive;
 `
 
 export const MobileIcon = styled.div`
@@ -84,6 +86,7 @@ export const NavLinks = styled(LinkS)`
     padding: 0 1rem;
     cursor: pointer;
     height: 100%;
+    font-size: 28px;
 
     &.active{
         border-bottom: 3px solid #01bf71;
@@ -101,19 +104,30 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
-    background: blue;
+    background: #22293A;
     white-space: nowrap;
     padding: 10px 22px;
     color: #fff;
-    font-size: 16px;
+    font-size: 28px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 
     &:hover{
         transition: all 0.2s ease-in-out;
         background: #fff;
         color: #010606;
     }
+`
+
+export const ArrowForward = styled(MdArrowForward)`
+    margin-left: 8px;
+    font-size: 20px;
+`
+export const ArrowRight = styled(MdKeyboardArrowRight)`
+    margin-left: 8px;
+    font-size: 20px;
 `

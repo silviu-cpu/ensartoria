@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FaBars } from 'react-icons/fa'
 import { 
     Nav, 
@@ -9,10 +9,17 @@ import {
     NavItem, 
     NavLinks,
     NavBtn,
-    NavBtnLink 
+    NavBtnLink, 
+    ArrowForward,
+    ArrowRight
 } from './NavbarElements'
 
 const Navbar = ({ toggle }) => {
+    const [hover, setHover] = useState(false)
+
+    const onHover = () => {
+        setHover(!hover)
+    }
     return (
       <>
         <Nav>
@@ -21,7 +28,7 @@ const Navbar = ({ toggle }) => {
                     EN Sartoria
                 </NavLogo>
                 <MobileIcon onClick={toggle}>
-                    <FaBars />
+                    <FaBars value={{ style: { fontSize: '39px' } }}/>
                 </MobileIcon>
                 <NavMenu>
                     <NavItem> 
@@ -38,7 +45,7 @@ const Navbar = ({ toggle }) => {
                     </NavItem>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/">Parla con noi</NavBtnLink>
+                    <NavBtnLink to="/" onMouseEnter={onHover} onMouseLeave={onHover}>Parla con noi { hover ? <ArrowForward/> : <ArrowRight/>} </NavBtnLink>
                 </NavBtn>
             </NavbarContainer>
         </Nav>
