@@ -86,7 +86,7 @@ export const NavLinks = styled(LinkS)`
     padding: 0 1rem;
     cursor: pointer;
     height: 100%;
-    font-size: 28px;
+    font-size: 18px;
 
     &.active{
         border-bottom: 3px solid #01bf71;
@@ -108,7 +108,7 @@ export const NavBtnLink = styled(LinkR)`
     white-space: nowrap;
     padding: 10px 22px;
     color: #fff;
-    font-size: 28px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
