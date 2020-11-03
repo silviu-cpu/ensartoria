@@ -16,7 +16,7 @@ export const ServiceContainer = styled.div`
 export const ServiceWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: 860px;
+    height: 1200px;
     width: 100%;
     max-width: 1100px;
     margin-right: auto;
