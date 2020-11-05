@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import ServiceSection from '../components/ServiceSection'
 import { homeObjOne } from '../components/ServiceSection/Data'
 import Sidebar from '../components/Sidebar'
-
+import Services from '../components/Services'
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -22,6 +22,8 @@ const Home = () => {
           <Sidebar isOpen={isOpen} toggle={toggle}/>
           <Navbar toggle={toggle}/>  
           <HeroSection/>
+          <ServiceSection {...homeObjOne}/>
+          <Services />
           <ServiceSection {...homeObjOne}/>
         </>
     )
