@@ -4,7 +4,7 @@ import { Link as LinkS } from 'react-scroll'
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md'
 
 export const Nav = styled.nav`
-    background: transparent;
+    background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
     height: 80px;
     margin-top: -80px;
     display: flex;
@@ -89,7 +89,7 @@ export const NavLinks = styled(LinkS)`
     font-size: 18px;
 
     &.active{
-        border-bottom: 3px solid #01bf71;
+    border-bottom: 3px solid #01bf71;
     }
 `
 export const NavBtn = styled.nav`
@@ -104,7 +104,7 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
-    background: #22293A;
+    background: #01bf71;
     white-space: nowrap;
     padding: 10px 22px;
     color: #fff;

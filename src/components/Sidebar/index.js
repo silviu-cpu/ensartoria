@@ -8,7 +8,15 @@ import {SidebarContainer,
     SidebarLink, 
     SidebarRoute
 } from './SidebarElements'
+import {animateScroll as scroll } from 'react-scroll'
+
 const Sidebar = ({ isOpen, toggle}) => {
+
+
+    const toggleBottom = () => {
+        scroll.scrollToBottom()
+    }
+
     return (
         
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
@@ -17,7 +25,7 @@ const Sidebar = ({ isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to="home" onClick={toggle}>
+                    <SidebarLink to="home" onClick={toggle} >
                         Home
                     </SidebarLink>
                     <SidebarLink to="services" onClick={toggle}>  
@@ -31,7 +39,7 @@ const Sidebar = ({ isOpen, toggle}) => {
                     </SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
-                   <SidebarRoute to="/">Parla con noi</SidebarRoute> 
+                   <SidebarRoute to="/" onClick={toggleBottom}>Parla con noi</SidebarRoute> 
                 </SideBtnWrap>
             </SidebarWrapper>
         </SidebarContainer>

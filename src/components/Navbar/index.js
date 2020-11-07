@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { FaBars } from 'react-icons/fa'
 import { 
     Nav, 
@@ -13,6 +13,7 @@ import {
     ArrowForward,
     ArrowRight
 } from './NavbarElements'
+import {animateScroll as scroll } from 'react-scroll'
 
 const Navbar = ({ toggle }) => {
     const [hover, setHover] = useState(false)
@@ -20,11 +21,35 @@ const Navbar = ({ toggle }) => {
     const onHover = () => {
         setHover(!hover)
     }
+
+    const [scrollNav, setScrollNav] = useState(false)
+
+    const changeNav = () => {
+        if(window.scrollY >= 980) {
+            setScrollNav(true)
+
+        }else {
+            setScrollNav(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeNav)
+    },[])
+
+    const toggleHome = () => {
+        scroll.scrollToTop()
+    }
+
+    const toggleBottom = () => {
+        scroll.scrollToBottom()
+    }
     return (
       <>
-        <Nav>
+      
+        <Nav scrollNav={scrollNav}>
             <NavbarContainer>
-                <NavLogo to="/">
+                <NavLogo to="/" onClick={toggleHome}>
                     EN Sartoria
                 </NavLogo>
                 <MobileIcon onClick={toggle}>
@@ -32,20 +57,20 @@ const Navbar = ({ toggle }) => {
                 </MobileIcon>
                 <NavMenu>
                     <NavItem> 
-                        <NavLinks to="home">Home</NavLinks>
+                        <NavLinks to="home" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Home</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="services">Servizi</NavLinks>
+                        <NavLinks to="services" smooth={true} duration={500} spy={true} exact='true' offset={-80} >Servizi</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="jobs">I nostri lavori</NavLinks>
+                        <NavLinks to="jobs" smooth={true} duration={500} spy={true} exact='true' offset={-80} >I nostri lavori</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="contact">Contatti</NavLinks>
+                        <NavLinks to="contact" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Contatti</NavLinks>
                     </NavItem>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/" onMouseEnter={onHover} onMouseLeave={onHover}>Parla con noi { hover ? <ArrowForward/> : <ArrowRight/>} </NavBtnLink>
+                    <NavBtnLink to="/" onClick={toggleBottom} onMouseEnter={onHover} onMouseLeave={onHover}>Parla con noi { hover ? <ArrowForward/> : <ArrowRight/>} </NavBtnLink>
                 </NavBtn>
             </NavbarContainer>
         </Nav>
