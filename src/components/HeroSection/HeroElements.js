@@ -25,6 +25,10 @@ export const HeroContainer = styled.div`
             linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
         z-index: 2;
     }
+    
+    @media screen and (max-width: 768px){
+        height: 1000px;
+    }
 `
 
 
@@ -50,7 +54,7 @@ export const VideoBg = styled.video`
 export const HeroContent = styled.div`
     z-index: 3;
     max-width: 1200px;
-    position absolute;
+    position: absolute;
     padding:8px 24px;
     display: flex;
     flex-direction: column;

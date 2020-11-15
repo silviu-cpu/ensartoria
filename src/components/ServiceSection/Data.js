@@ -1,6 +1,7 @@
 import image from '../../images/svg-1.svg'
 import image2 from '../../images/svg-6.svg'
 
+
 export const homeObjOne = {
     id: "services",
     lightBg: true,
@@ -25,9 +26,9 @@ export const homeObjTwo = {
     lightTextDesc: false,
     topLine: 'Contatti',
     headline: 'I nostri recapiti',
-    description: 'Phone Number: 0303030',
-    mail: 'Mail: 0303030',
-    adress: 'Address: 0303030',
+    description: 'Numero di telefono: +39 3533306491',
+    mail: 'E-Mail: ensartoria@gmail.com',
+    adress:'Indirizzo: 20812 Limbiate MB - Viale dei Mille 138',
     imgStart: true,
     img: image2,
     alt: 'Contact',

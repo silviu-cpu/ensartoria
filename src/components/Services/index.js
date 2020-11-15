@@ -9,18 +9,18 @@ const Services = () => {
             <ServicesWrapper>
                 <ServicesCard>
                     <ServicesIcon src={Icon1}/>
-                    <ServicesH2>Quality</ServicesH2>
-                    <ServicesP>We offer top quality</ServicesP>
+                    <ServicesH2>Qualità</ServicesH2>
+                    <ServicesP>Offriamo la massima qualità sui nostri prodotti</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={Icon2}/>
-                    <ServicesH2>Time</ServicesH2>
-                    <ServicesP>We deliver our products very fast</ServicesP>
+                    <ServicesH2>Tempo</ServicesH2>
+                    <ServicesP>Consegniamo i nostri prodotti molto velocemente</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={Icon3}/>
-                    <ServicesH2>B2B Services</ServicesH2>
-                    <ServicesP>We offer B2B Services</ServicesP>
+                    <ServicesH2>B2B Servizi</ServicesH2>
+                    <ServicesP>Offriamo servizi B2B -business to business- </ServicesP>
                 </ServicesCard>
             </ServicesWrapper>
         </ServicesContainer>
